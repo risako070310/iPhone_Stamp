@@ -60,5 +60,9 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func back(){
+        self.imageView.removeFromSuperview()
+        
+    }
 }
 
