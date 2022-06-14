@@ -84,6 +84,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    
+    @IBAction func save(){
+        let rect: CGRect = CGRect(x: 0, y: 30, width: 320, height: 380)
+        UIGraphicsBeginImageContext(rect.size)
+        self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let capture = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        UIImageWriteToSavedPhotosAlbum(capture!, nil, nil, nil)
+    }
 }
 
